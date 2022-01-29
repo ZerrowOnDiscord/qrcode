@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/wavesurfer.js"></script>
+    <!-- Title -->
+    <title>QRCode</title>
+    <!-- Icon -->
+    <link rel="icon" href="img/logo.jpg" type="image/x-icon">
+    <!-- Font Awesome -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/js/all.min.js"></script>
+    <!-- Font CSS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="card">
+        <div class="content">
+            <div class="qrcode">
+                <img id="qrcodeimage" src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=ZerrowOnTop" alt="QRCODE">
+            </div>
+            <h1>QRCODE</h1>
+            <p>Simple QRCode generator.</p>
+            <input type="text" id="qrinput" name="qrinput" size="10">
+            <button onclick="qrCode()" type="button" class="btn btn-primary btn-sm"><p>Submite</p></button>
+            <a href="https://discord.gg/xnQvRgb5Gv">Discord</a>
+            <a href="https://www.youtube.com/channel/UCHGYZhKc1VtUcdDC0HOKIkw">Youtube</a>
+        </div>
+    </div>
+    <footer>
+        <p>By <a href="https://github.com/ZerrowOnDiscord">Zerrow</a></p>
+    </footer>
+    
+    <script>
+        function qrCode() {
+            textvalue = document.getElementById('qrinput').value
+            document.getElementById("qrcodeimage").src=`https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=${textvalue}`
+        }
+    </script>
+</body>
+</html>
